@@ -20,3 +20,9 @@ Cria o esquema conceitual para o contexto de oficina com base na narrativa forne
 - A mesma equipe avalia e executa os serviços
 - Os mecânicos possuem código, nome, endereço e especialidade
 - Cada OS possui: n°, data de emissão, um valor, status e uma data para conclusão dos trabalhos.
+
+## 
+### Observações da modelagem:
+
+ - As entidades Servicos_a_executar e Necessidade_de_pecas possuem atributos para guardar o valor efetivo praticado, apesar de que as entidades Servico e Pecas possuam campos para preco_padrao. Isso se faz necessário pois o preco_padrao sofrerá alteração de valor ao longo do tempo e o preço efetivamente praticado em cada OS precisa ser guardado sem alterações para cálculos e/ou consultas futuras.
+ - A entidade Avaliacao_execucao_OS possui um relacionamento 1:1 com a entidade Ordem_servico e poderiam ser unidas em uma única entidade para guardar os dados da OS, com campos opcionais para a parte de avaliação pela equipe.
